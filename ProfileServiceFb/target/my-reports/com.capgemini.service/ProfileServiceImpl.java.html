@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ProfileServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ProfileServiceFb</a> &gt; <a href="index.source.html" class="el_package">com.capgemini.service</a> &gt; <span class="el_source">ProfileServiceImpl.java</span></div><h1>ProfileServiceImpl.java</h1><pre class="source lang-java linenums">package com.capgemini.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.capgemini.exception.ProfileDataAlreadyExistsException;
+import com.capgemini.exception.ProfileIdNotFound;
+import com.capgemini.model.Profile;
+import com.capgemini.repository.ProfileRepository;
+
+@Service
+
+<span class="fc" id="L16">public class ProfileServiceImpl implements ProfileService {</span>
+
+	@Autowired
+	private ProfileRepository proRepo;
+
+	// create profile data
+
+	@Override
+	public Profile createProfileData(Profile prof) throws ProfileDataAlreadyExistsException {
+		// TODO Auto-generated method stub
+<span class="pc bpc" id="L26" title="1 of 2 branches missed.">		if (proRepo.existsById(prof.getId())) {</span>
+<span class="nc" id="L27">			throw new ProfileDataAlreadyExistsException();</span>
+		}
+<span class="fc" id="L29">		return proRepo.save(prof);</span>
+
+	}
+
+	// update profile data
+
+	@Override
+	public Profile updateProfileData(Profile prof) throws ProfileIdNotFound {
+		// TODO Auto-generated method stub
+<span class="nc" id="L38">		Optional&lt;Profile&gt; profDb = this.proRepo.findById(prof.getId());</span>
+
+<span class="nc bnc" id="L40" title="All 2 branches missed.">		if (profDb.isPresent()) {</span>
+<span class="nc" id="L41">			Profile profUpdate = profDb.get();</span>
+<span class="nc" id="L42">			profUpdate.setId(prof.getId());</span>
+<span class="nc" id="L43">			profUpdate.setName(prof.getName());</span>
+<span class="nc" id="L44">			profUpdate.setMobile(prof.getMobile());</span>
+<span class="nc" id="L45">			profUpdate.setLoc(prof.getLoc());</span>
+<span class="nc" id="L46">			proRepo.save(profUpdate);</span>
+<span class="nc" id="L47">			return profUpdate;</span>
+		} else {
+<span class="nc" id="L49">			throw new ProfileIdNotFound();</span>
+		}
+	}
+	// get all profile data
+
+	@Override
+	public List&lt;Profile&gt; getAllProfileData() {
+		// TODO Auto-generated method stub
+<span class="fc" id="L57">		return this.proRepo.findAll();</span>
+	}
+
+	// get profile data by id
+
+	@Override
+	public Profile getProfileDataById(int id) throws ProfileIdNotFound {
+		// TODO Auto-generated method stub
+<span class="nc" id="L65">		Optional&lt;Profile&gt; profDb = this.proRepo.findById(id);</span>
+
+<span class="nc bnc" id="L67" title="All 2 branches missed.">		if (profDb.isPresent()) {</span>
+
+<span class="nc" id="L69">			return profDb.get();</span>
+		} else {
+<span class="nc" id="L71">			throw new ProfileIdNotFound();</span>
+		}
+	}
+
+	// delete profile data by id
+
+	@Override
+	public void deleteProfileDataById(int id) throws ProfileIdNotFound {
+		// TODO Auto-generated method stub
+<span class="nc" id="L80">		Optional&lt;Profile&gt; profDb = this.proRepo.findById(id);</span>
+
+<span class="nc bnc" id="L82" title="All 2 branches missed.">		if (profDb.isPresent()) {</span>
+
+<span class="nc" id="L84">			this.proRepo.delete(profDb.get());</span>
+<span class="nc" id="L85">		} else {</span>
+<span class="nc" id="L86">			throw new ProfileIdNotFound();</span>
+		}
+<span class="nc" id="L88">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
