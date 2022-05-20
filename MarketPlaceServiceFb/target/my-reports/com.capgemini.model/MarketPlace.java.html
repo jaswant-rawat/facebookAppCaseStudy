@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MarketPlace.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">MarketPlaceServiceFb</a> &gt; <a href="index.source.html" class="el_package">com.capgemini.model</a> &gt; <span class="el_source">MarketPlace.java</span></div><h1>MarketPlace.java</h1><pre class="source lang-java linenums">package com.capgemini.model;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection=&quot;MarketPlace&quot;)
+public class MarketPlace {
+
+	@Id
+	private int itemId;
+	private String itemName;
+	private int itemPrice;
+	private String itemCondition;
+	public int getItemId() {
+<span class="fc" id="L15">		return itemId;</span>
+	}
+	public void setItemId(int itemId) {
+<span class="fc" id="L18">		this.itemId = itemId;</span>
+<span class="fc" id="L19">	}</span>
+	public String getItemName() {
+<span class="fc" id="L21">		return itemName;</span>
+	}
+	public void setItemName(String itemName) {
+<span class="fc" id="L24">		this.itemName = itemName;</span>
+<span class="fc" id="L25">	}</span>
+	public int getItemPrice() {
+<span class="fc" id="L27">		return itemPrice;</span>
+	}
+	public void setItemPrice(int itemPrice) {
+<span class="fc" id="L30">		this.itemPrice = itemPrice;</span>
+<span class="fc" id="L31">	}</span>
+	public String getItemCondition() {
+<span class="fc" id="L33">		return itemCondition;</span>
+	}
+	public void setItemCondition(String itemCondition) {
+<span class="fc" id="L36">		this.itemCondition = itemCondition;</span>
+<span class="fc" id="L37">	}</span>
+	@Override
+	public String toString() {
+<span class="fc" id="L40">		return &quot;MarketPlace [itemId=&quot; + itemId + &quot;, itemName=&quot; + itemName + &quot;, itemPrice=&quot; + itemPrice</span>
+				+ &quot;, itemCondition=&quot; + itemCondition + &quot;]&quot;;
+	}
+	public MarketPlace(int itemId, String itemName, int itemPrice, String itemCondition) {
+<span class="fc" id="L44">		super();</span>
+<span class="fc" id="L45">		this.itemId = itemId;</span>
+<span class="fc" id="L46">		this.itemName = itemName;</span>
+<span class="fc" id="L47">		this.itemPrice = itemPrice;</span>
+<span class="fc" id="L48">		this.itemCondition = itemCondition;</span>
+<span class="fc" id="L49">	}</span>
+	public MarketPlace() {
+<span class="fc" id="L51">		super();</span>
+		// TODO Auto-generated constructor stub
+<span class="fc" id="L53">	}</span>
+
+	
+	
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
