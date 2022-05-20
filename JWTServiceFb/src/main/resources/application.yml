@@ -1,0 +1,23 @@
+jwt:
+  secret: secretkey123
+  
+server:
+    port: 8085
+    
+    
+spring:
+    application:
+            name: JWTServiceFb
+    data:
+        mongodb:
+               uri: mongodb+srv://jaswant-rawat:test@facebookservice.gzd1r.mongodb.net/facebookService?retryWrites=true&w=majority
+eureka:
+  client:
+    service-url:
+              defaultZone: http://localhost:8761/eureka/
+logging:
+  file:
+    path: JWTServiceFbLogs/jwtlog.log
+data:
+   exception:
+          incmsg: Invalid Credentials!!
