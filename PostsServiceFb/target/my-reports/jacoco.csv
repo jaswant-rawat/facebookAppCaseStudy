@@ -1,0 +1,8 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+PostsServiceFb,com.capgemini.exception,PostDataAlreadyExistsException,7,0,0,0,4,0,2,0,2,0
+PostsServiceFb,com.capgemini.exception,PostIdNotFound,7,0,0,0,4,0,2,0,2,0
+PostsServiceFb,com.capgemini.exception,GlobalExceptionHandler,14,3,0,0,2,1,2,1,2,1
+PostsServiceFb,com.capgemini.controller,PostController,23,17,0,0,5,3,3,3,3,3
+PostsServiceFb,com.capgemini.service,PostServiceImpl,83,20,7,1,20,4,7,3,3,3
+PostsServiceFb,com.capgemini.model,Post,0,56,0,0,0,21,0,11,0,11
+PostsServiceFb,com.capgemini,PostsServiceFbApplication,5,3,0,0,2,1,1,1,1,1

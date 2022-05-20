@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PostServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PostsServiceFb</a> &gt; <a href="index.source.html" class="el_package">com.capgemini.service</a> &gt; <span class="el_source">PostServiceImpl.java</span></div><h1>PostServiceImpl.java</h1><pre class="source lang-java linenums">package com.capgemini.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.capgemini.exception.PostDataAlreadyExistsException;
+import com.capgemini.exception.PostIdNotFound;
+import com.capgemini.model.Post;
+import com.capgemini.repository.PostRepository;
+
+@Service
+<span class="fc" id="L15">public class PostServiceImpl implements PostService {</span>
+
+	
+
+	@Autowired
+	private PostRepository posRepo;
+
+	@Override
+	public Post createPostData(Post pos) throws PostDataAlreadyExistsException {
+		// TODO Auto-generated method stub
+<span class="pc bpc" id="L25" title="1 of 2 branches missed.">		if(posRepo.existsById(pos.getId()))</span>
+		{
+<span class="nc" id="L27">			throw new PostDataAlreadyExistsException();</span>
+		}
+<span class="fc" id="L29">		return posRepo.save(pos);</span>
+		
+	}
+	
+	@Override
+	public Post updatePostData(Post pos) throws PostIdNotFound {
+		// TODO Auto-generated method stub
+<span class="nc" id="L36">		Optional&lt;Post&gt; posDb = this.posRepo.findById(pos.getId());</span>
+
+<span class="nc bnc" id="L38" title="All 2 branches missed.">        if (posDb.isPresent()) {</span>
+<span class="nc" id="L39">        	Post posUpdate = posDb.get();</span>
+<span class="nc" id="L40">        	posUpdate.setId(pos.getId());</span>
+<span class="nc" id="L41">        	posUpdate.setName(pos.getName());</span>
+<span class="nc" id="L42">        	posUpdate.setTitle(pos.getTitle());</span>
+<span class="nc" id="L43">        	posUpdate.setDesc(pos.getDesc());</span>
+<span class="nc" id="L44">        	posRepo.save(posUpdate);</span>
+<span class="nc" id="L45">            return posUpdate;</span>
+        }
+        else
+        {
+<span class="nc" id="L49">        	throw new PostIdNotFound();</span>
+        }
+	}
+	
+	@Override
+	public List&lt;Post&gt; getAllPostData() {
+		// TODO Auto-generated method stub
+<span class="fc" id="L56">		return this.posRepo.findAll();</span>
+	}
+
+	@Override
+	public Post getPostDataById(int id) throws PostIdNotFound {
+		// TODO Auto-generated method stub
+<span class="nc" id="L62">		Optional&lt;Post&gt; posDb = this.posRepo.findById(id);</span>
+
+<span class="nc bnc" id="L64" title="All 2 branches missed.">        if (posDb.isPresent()) {</span>
+        	
+<span class="nc" id="L66">            return posDb.get();</span>
+        } 
+        else
+        {
+<span class="nc" id="L70">        	throw new PostIdNotFound();</span>
+        }
+	}
+
+	@Override
+	public void deletePostDataById(int id) throws PostIdNotFound {
+		// TODO Auto-generated method stub
+<span class="nc" id="L77">		Optional&lt;Post&gt; posDb = this.posRepo.findById(id);</span>
+
+<span class="nc bnc" id="L79" title="All 2 branches missed.">        if (posDb.isPresent()) {</span>
+        	
+<span class="nc" id="L81">            this.posRepo.delete(posDb.get());</span>
+        } 
+        else
+        {
+<span class="nc" id="L85">        	throw new PostIdNotFound();</span>
+        }
+<span class="nc" id="L87">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

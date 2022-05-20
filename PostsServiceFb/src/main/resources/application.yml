@@ -1,0 +1,31 @@
+server:
+  port: 8083
+spring:
+  application:
+      name: PostService
+  data:
+   mongodb:
+     uri: mongodb+srv://jaswant-rawat:test@facebookservice.gzd1r.mongodb.net/facebookService
+  main:
+    allow-circular-references: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher       
+data:
+  exception:
+     dataExists: Record Already Exists..!!
+     dataNotFound: Record Id Not Found..!!
+
+eureka:
+   client:
+      service-url:
+       defaultZone: http://localhost:8761/eureka/
+logging:
+  file:
+    path: PostLogs/postlog.log
+
+
+#logging.level.root=INFO
+#logging.level.com.capgemini=TRACE
+
+
