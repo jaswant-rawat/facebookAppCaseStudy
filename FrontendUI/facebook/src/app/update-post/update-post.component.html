@@ -1,0 +1,36 @@
+
+<link rel="stylesheet" href="update-post.component.css" />
+<button routerLink="/posts">Back to ALL Posts <---</button>
+<button routerLink="/login" style="float: right; margin: 10px;"  class="btn btn-danger mx-2">Logout</button>
+<div style="margin-left: 500px;" class="textcenter">
+    <form (ngSubmit)="onSubmit()">
+        <h1 class="createPostTextcss">Update Post </h1>
+        <div class="form-group">
+            <label for=""> id  </label>
+            <input style="margin-left: 22px;" type="text"  class="form-control" id="id"
+            [(ngModel)]="postObj.id" name='id'>
+        </div>
+    
+        <br>
+        <div class="form-group">
+            <label for=""> name </label>
+            <input type="text" class="form-control" id="name"
+            [(ngModel)]="postObj.name" name='name'>
+        </div>
+        <br>
+         <div class="form-group">
+            <label for=""> title </label>
+            <input style="margin-left: 10px;" type="text" class="form-control" id="title"
+            [(ngModel)]="postObj.title" name='title'>
+        </div>
+        <br>
+         <div class="form-group">
+            <label for=""> desc </label>
+            <input style="margin-left: 8px;"type="text" class="form-control" id="desc"
+            [(ngModel)]="postObj.desc" name='desc'>
+        </div>
+        <br>
+    <button style="margin-left: 42px;" class="btn btn-success buttoncss textcenter " type="submit" (ngSubmit)="onSubmit()"> Update POST</button>
+    
+    </form>
+    </div>

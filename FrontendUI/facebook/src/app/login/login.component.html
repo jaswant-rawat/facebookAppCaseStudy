@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="login.component.css" />
+  </head>
+  <body>
+    <div class="textbox">
+      <h1>facebook 0.1</h1>
+      <h2>
+        Facebook helps you connect and share<br />
+        with the people in your life.
+      </h2>
+    </div>
+
+    <div class="container">
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="form">
+          <input
+            formControlName="mobile" required
+            type="number"
+            class="text"
+            placeholder="Enter Your Phone number"
+          />
+          <br />
+          <input
+            formControlName="name"
+            type="text"
+            class="text"
+            placeholder="Enter your name"
+          /><br />
+          <button type="submit">Log In</button>
+
+          <div class="btn">
+            <a routerLink="/signup">
+              <button routerLink="/login">Create New Account</button>
+            </a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

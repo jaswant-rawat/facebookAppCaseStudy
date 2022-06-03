@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="signup.component.css" />
+  </head>
+  <body>
+    <div class="textbox">
+      <h1>facebook</h1>
+      <h2>
+        Create a new account <br />
+        to get started.
+      </h2>
+    </div>
+
+    <div class="container">
+      <form [formGroup]="signupForm" (ngSubmit)="signUp()">
+        <div class="form">
+          <input
+            formControlName="id"
+            type="number"
+            class="text"
+            placeholder="Enter an id"
+          />
+          <br />
+          <input
+            formControlName="name"
+            type="text"
+            class="text"
+            placeholder="Enter your full name"
+          /><br />
+          <input
+            formControlName="mobile"
+            type="number"
+            class="text"
+            placeholder="Enter your mobile"
+          /><br />
+          <input
+            formControlName="location"
+            type="text"
+            class="text"
+            placeholder="Enter your location"
+          /><br />
+          <button type="submit">Register</button>
+
+          <div class="btn">
+            <a routerLink="/login">
+              <button routerLink="/signup">Already a user ? Login Here</button>
+            </a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

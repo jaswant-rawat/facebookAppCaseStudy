@@ -1,0 +1,122 @@
+.header-container{
+    background-color: #3B5998;
+    height: 15vh;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-around;
+    
+
+}
+
+body{
+    margin: 0;
+}
+.logo{
+    height: 20vh;
+}
+
+.nav-bar{
+    margin-left: 10vw;
+}
+
+.nav-bar ul{
+    list-style-type: none;
+}
+
+.nav-bar ul li{
+    display: inline;
+    padding: 1em;
+}
+
+.nav-bar ul li a{
+   text-decoration: none;
+   color: rgb(255, 255, 255);
+}
+
+.nav-bar ul li a:hover{
+     color: rgb(0, 0, 0);
+     border-bottom: 1px solid white;
+     padding-bottom: 1em;
+ }
+
+ button{
+     background: coral;
+     color: white;
+     border: 2px solid white;
+     padding: 1em ;
+     width: 10vw;
+     border-radius: 10px;
+ }
+ 
+ button:hover{
+    background: white;
+    color:coral;
+    border: 2px solid coral;
+  }
+
+ 
+/* Layout section starts here */
+
+.layout-section{
+    background-color: rgb(168, 243, 229);
+   
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5vh;
+}
+
+.layout-section h2{
+    text-align: center;
+}
+
+.card-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 5vh;
+    
+    
+}
+.card img{
+    height:35vh;
+    width:20vw;
+    
+}
+.card{
+    background-color: rgb(231, 164, 164);
+    text-align: center;
+    height: 65vh;
+    width: 20vw;
+    padding: 1em;
+    box-shadow: 5px 5px 30px grey;
+}
+
+
+/*Footer starts here */
+
+footer{
+    background-color: #bda4ca;
+    height: 15vh;
+    text-align: center;
+    border: 2px solid rgb(255, 255, 255);
+    margin :0;
+}
+
+.footer
+{
+    background-color:#3B5998;
+    display: flex;
+    min-height: 10vh;
+    flex-direction: column;
+    flex: 1 0 auto;
+    margin-top: 200px;
+    text-align: center;
+}
+.copyright
+{
+    margin-top: 25px;
+    color: aliceblue;
+}

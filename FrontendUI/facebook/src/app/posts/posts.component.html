@@ -1,0 +1,38 @@
+
+ <link rel="stylesheet" href="posts.component.css">
+<div class="generic-container" >
+    <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="row">
+        <h3 class="post-heading">All Posts here</h3>
+          <button routerLink="/login" style="float: right; margin: 10px;"  class="btn btn-danger mx-2">Logout</button>
+          <button routerLink="/create-post" style="float: left; margin: 10px;"  class="btn btn-danger mx-2">Create Post + </button>
+          <button routerLink="/update-post" style="float: left; margin: 10px;"  class="btn btn-danger mx-2">Update Post + </button>
+          <button routerLink="/delete-post" style="float: left; margin: 10px;"  class="btn btn-danger mx-2">Delete Post + </button>
+      </div>
+      <div class="panel-heading"><span class="lead"></span>
+      </div>
+      <div class="tablecontainer">
+        <table  border="2"  class="table table-hover" style="height:100% ;width:100% ;">
+          <thead>
+          <!-- <tr>
+            <th>id</th>
+            <th>Name</th>
+            <th>Title</th>
+            <th>Post Description</th>
+            </tr> -->
+          </thead>
+          <tbody>
+          <tr *ngFor="let post of posts">
+            <td><span>Post id :{{post.id}}</span></td>
+            <td><span>posted by:{{post.name}}</span></td>
+            <br>
+            <td><span>{{post.title}}</span></td>
+            <br>
+            <td><span>{{post.desc}}</span></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
