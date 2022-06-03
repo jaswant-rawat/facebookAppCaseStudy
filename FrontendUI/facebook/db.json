@@ -1,0 +1,32 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "signupUsers": [
+    {
+      "id": "134",
+      "name": "bruce wayne",
+      "mobile": "9899993030",
+      "location": "gotham"
+    },
+    {
+      "id": "137",
+      "name": "superman",
+      "mobile": "989898989898",
+      "location": "huawei"
+    },
+    {
+      "id": "139",
+      "name": "oliver",
+      "mobile": "99199919",
+      "location": "city"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
